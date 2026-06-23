@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\OilChange;
 use Illuminate\Http\Request;
 
-class OilChanController extends Controller
+class OilChangeController extends Controller
 {
     public function index()
     {
@@ -24,7 +24,7 @@ class OilChanController extends Controller
     {
         $validated = $request->validate([
             'currentOdometer' => ['required', 'numeric'],
-            'previousOdometer'=> ['requried', 'numeric', 'gt:currentOdometer'],
+            'previousOdometer'=> ['required', 'numeric', 'lt:currentOdometer'],
             'previousDate'=> ['required', 'date', 'before:today'],
         ]);
 

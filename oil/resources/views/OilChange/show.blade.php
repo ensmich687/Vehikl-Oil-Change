@@ -20,6 +20,7 @@
     @endif
 
     <form action="{{ route('OilChange.create') }}" method="get">
+        @csrf
         <button type="submit">Input another Oil Change</button>
     </form>
 

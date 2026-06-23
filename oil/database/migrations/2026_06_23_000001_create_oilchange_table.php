@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("oilChange", function (Blueprint $table) {
+        Schema::create("oil_changes", function (Blueprint $table) {
             $table->id();
             $table->integer('currentOdometer');
             $table->integer('previousOdometer');
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('oilChange');
+        Schema::dropIfExists('oil_changes');
     }
 };
