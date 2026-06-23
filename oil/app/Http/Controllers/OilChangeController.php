@@ -23,9 +23,9 @@ class OilChanController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'currentOdometer' => 'required',
-            'previousOdometer'=> 'requried',
-            'previousDate'=> 'required',
+            'currentOdometer' => ['required', 'numeric'],
+            'previousOdometer'=> ['requried', 'numeric', 'gt:currentOdometer'],
+            'previousDate'=> ['required', 'date', 'before:today'],
         ]);
 
         $oilChange = OilChange::create($validated);

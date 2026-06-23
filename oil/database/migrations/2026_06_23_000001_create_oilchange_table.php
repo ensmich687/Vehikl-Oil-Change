@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('currentOdometer');
             $table->integer('previousOdometer');
-            $table->dateTime('previousDate');
+            $table->date('previousDate');
             $table->timestamps();
         });
     }
