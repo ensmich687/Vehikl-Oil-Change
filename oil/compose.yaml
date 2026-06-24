@@ -1,0 +1,13 @@
+services:
+    laravel_app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: laravel_sqlite_app
+        ports:
+            - "8080:80"
+        volumes:
+            # Persist the database file on your host machine
+            - ./database:/var/www/html/database
+            # Optional: mount storage for persistent user uploads
+            - ./storage:/var/www/html/storage
