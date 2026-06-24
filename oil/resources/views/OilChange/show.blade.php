@@ -12,7 +12,7 @@
     <p>Current Odometer: {{ $oilChange->currentOdometer }}</p>
     <p>Previous Odometer: {{ $oilChange->previousOdometer }}</p>
     <p>Previous Oil Change Date: {{ $oilChange->previousDate }}</p>
-    @if (($oilChange->currentOdometer - $oilChange->previousOdometer) > 5000 || $oilChange->previousDate->isAfter(now()->addMonths(6)))
+    @if (($oilChange->currentOdometer - $oilChange->previousOdometer) > 5000 || now()->isAfter($oilChange->previousDate->addMonths(6)))
         <p>The car needs an oil change</p>
     @else
         <p>The car is not due for an oil change</p>
