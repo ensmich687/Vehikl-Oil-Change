@@ -13,7 +13,7 @@ docker compose exec laravel_app php artisan migrate
 docker compose exec laravel_app chown -R www-data:www-data /var/www/html/database/
 ```
 
-Hit Yes if ther database is not created yet
+Hit Yes if the database is not created yet
 
 After the migrations have ran the application can be found at:
 http://localhost:8080/
